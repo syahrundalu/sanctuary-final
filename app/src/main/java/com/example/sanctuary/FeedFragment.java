@@ -11,10 +11,11 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class FeedFragment extends Fragment {
 
     private RecyclerView recyclerView;
-    private FeedAdapter feedAdapter;
+    private PostAdapter feedAdapter;
     private List<FeedItem> feedItems;
 
     public FeedFragment() {
@@ -35,7 +36,7 @@ public class FeedFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
 
         feedItems = new ArrayList<>(); // Replace with your feed data
-        feedAdapter = new FeedAdapter(feedItems);
+        feedAdapter = new PostAdapter((List<Post>) feedAdapter);
         recyclerView.setAdapter(feedAdapter);
     }
 }

@@ -188,12 +188,18 @@
 
 
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvPosts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/jarak_10dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/post_item"/>
 
             </LinearLayout>
-            <FrameLayout
-                android:id="@+id/feedContainer"
-                android:layout_width="match_parent"
-                android:layout_height="720dp"/>
+
+
+
 
         </RelativeLayout>
 
