@@ -14,6 +14,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
@@ -29,6 +31,8 @@ public class CreatePostActivity extends AppCompatActivity {
     private static final int PICK_IMAGE_REQUEST = 1;
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firestore;
+    private FirebaseStorage firebaseStorage;
+    private StorageReference storageReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +46,22 @@ public class CreatePostActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
+        firebaseStorage = FirebaseStorage.getInstance();
+        storageReference = firebaseStorage.getReference();
 
-        btnSelectImage.setOnClickListener(v -> openImagePicker());
+        btnSelectImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openImagePicker();
+            }
+        });
 
-        btnCreatePost.setOnClickListener(v -> createPost());
+        btnCreatePost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createPost();
+            }
+        });
     }
 
     private void openImagePicker() {
@@ -79,7 +95,7 @@ public class CreatePostActivity extends AppCompatActivity {
         progressDialog.show();
 
         String userId = firebaseAuth.getCurrentUser().getUid();
-        StorageReference imageRef = FirebaseFirestore.getInstance().getReference()
+        StorageReference imageRef = storageReference
                 .child("post_images").child(userId + "_" + System.currentTimeMillis() + ".jpg");
 
         UploadTask uploadTask = imageRef.putFile(selectedImageUri);
