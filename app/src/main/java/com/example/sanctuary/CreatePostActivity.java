@@ -79,7 +79,7 @@ public class CreatePostActivity extends AppCompatActivity {
         progressDialog.show();
 
         String userId = firebaseAuth.getCurrentUser().getUid();
-        StorageReference imageRef = FirebaseStorage.getInstance().getReference()
+        StorageReference imageRef = FirebaseFirestore.getInstance().getReference()
                 .child("post_images").child(userId + "_" + System.currentTimeMillis() + ".jpg");
 
         UploadTask uploadTask = imageRef.putFile(selectedImageUri);
