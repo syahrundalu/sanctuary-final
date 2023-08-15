@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">sanctuary</string>
+
+    <string name="name">Muhammad Syahrun Dalu</string>
+    <string name="nim">10116584</string>
+
+    <string name="get_started_tag">Sanctuary</string>
+    <string name="get_started_det">Sanctuary app allows users to effortlessly share their favorite songs and curated playlists with friends, fostering a vibrant and interconnected community of music enthusiasts.</string>
+
+    <string name="about_me">I Am Muhammad Syahrun Dalu, Officialy from Gorontalo, Indonesia. Now I Study in Universitas Komputer Indonesia, and my major is Informatics Engineering.
+Besides, I am a freelancer that already holds more than 20 Clients since 2019. My Skills that help the client so far are brand designer and full-stack Website Developer. And as a hobby music is still my first place to hang out with time.</string>
+    <string name="hobbie">Coding, Design, Working, Music</string>
+    <string name="fav_food">Sambal Ikan Roa, Gorengan</string>
+    <string name="fav_drink">Coding, Design, Working, Music</string>
+    <string name="ambition">Fulltime UI Designer, Musician, Entrepreneur</string>
+    <string name="title_activity_home">home</string>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>
